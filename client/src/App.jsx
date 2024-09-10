@@ -6,7 +6,6 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import SingUpModal from './components/signUpModal'
 import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 
@@ -16,6 +15,8 @@ const httpLink = createHttpLink({
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
+  console.log("token A from App in:", token);
+
   return {
     headers: {
       ...headers,
@@ -39,9 +40,7 @@ function App() {
       <StoreProvider>
         
          <Nav />
-         {/* <div className="App flex flex-col items-center justify-center" onClick={SignUpModal}>
-            <SignUpModal />
-          </div> */}
+
         <Outlet />       
       </StoreProvider>
 

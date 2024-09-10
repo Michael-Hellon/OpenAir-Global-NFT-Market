@@ -28,7 +28,7 @@ function Nav() {
       return (
         <>
         <Singup>
-    
+       
         </Singup>
         <Login>
 
