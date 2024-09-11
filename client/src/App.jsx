@@ -33,7 +33,7 @@ const client = new ApolloClient({
 // don't change below - <outlet> must be there to display items
 function App() {
   return (
-<div className="rounded-s-full">
+<div className=" bg-blue-400">
        
     <ApolloProvider client={client}>
 

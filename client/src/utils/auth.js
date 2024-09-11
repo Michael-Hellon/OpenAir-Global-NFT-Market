@@ -16,7 +16,7 @@ class AuthService {
   isTokenExpired(token) {
     try {
       const decoded = decode(token);
-      console.log("token B from src/utils/auth in:", token);
+      // console.log("token B from src/utils/auth in:", token);
 
       if (decoded.exp < Date.now() / 1000) {
         return true;

@@ -62,10 +62,10 @@ const resolvers = {
         line_items.push({
           price_data: {
             currency: 'usd',
-            piece_data: {
+            product_data: {
               name: piece.name,
               description: piece.description,
-              images: [`${url}/images/${piece.image}`]
+              // images: [`${url}/images/${piece.image}`]
             },
             unit_amount: piece.price * 100,
           },
@@ -88,7 +88,7 @@ const resolvers = {
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
-      console.log("token A from resolvers in:", token);
+      // console.log("token A from resolvers in:", token);
 
       return { token, user };
     },
@@ -129,7 +129,7 @@ const resolvers = {
       }
 
       const token = signToken(user);
-      console.log("token B from resolver in:", token);
+      // console.log("token B from resolver in:", token);
 
       return { token, user };
     }
